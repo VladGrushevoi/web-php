@@ -7,10 +7,10 @@
      <h1>Лабораторні роботи WEB</h1>
      <div class="container">
     <?php
-    $app->get('/cowsay', function() use($app) {
-        $app['monolog']->addDebug('cowsay');
-        return "<pre>". \Cowsayphp\Cow::say("Cool beans") ."</pre>";
-      });
+    // $app->get('/cowsay', function() use($app) {
+    //     $app['monolog']->addDebug('cowsay');
+    //     return "<pre>". \Cowsayphp\Cow::say("Cool beans") ."</pre>";
+    //   });
     require('../vendor/autoload.php');
         $buttons_labs = [
             "1-laba.php"=>"Перша лабораторна","2-laba.php"=>"Друга лабораторна",
