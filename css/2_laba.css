@@ -1,0 +1,21 @@
+table {
+    border: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr, td, th {
+    border: 1px solid black;
+}
+
+table tr {
+    height: 40px;
+}
+
+table th {
+    height: 75px;
+}
+
+table tr {
+    text-align: center;
+}
