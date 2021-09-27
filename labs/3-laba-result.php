@@ -25,13 +25,10 @@
 
     while (!feof($file)) {
         $curr_line = strtolower(str_replace(" ", '', fgets($file)));
-        echo "[".$correct_choose . " *** " . $curr_line . "]";
         if ($curr_line == $correct_choose) {
-            echo "check2";
             $count_record = intval(fgets($file));
             $index = 1;
             while(!feof($file)){
-                echo "check3";
             if($count_record == $index){
                 break;
             }
