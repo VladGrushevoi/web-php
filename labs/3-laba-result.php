@@ -25,7 +25,7 @@
 
     while (!feof($file)) {
         $curr_line = strtolower(str_replace(" ", '', fgets($file)));
-        if ($curr_line === $correct_choose) {
+        if ($curr_line == $correct_choose) {
             $count_record = intval(fgets($file));
             $index = 1;
             while(!feof($file)){
@@ -36,6 +36,7 @@
             $count_free = intval(fgets($file));
             $nedobor = "-";
             $count_contr = intval(fgets($file));
+            $correct_contr = $count_contr == 0 ? "-":$count_contr;
             $name_university = fgets($file);
 
             echo "<tr>
@@ -52,7 +53,7 @@
                     $nedobor
                 </td>
                 <td>
-                    $count_contr
+                    $correct_contr
                 </td>
                 <td>
                     $name_university
