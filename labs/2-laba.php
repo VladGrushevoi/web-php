@@ -19,7 +19,7 @@
             $handle = fopen("../data/oblinfo.txt", "r");
             $index = 1;
             $count_region = intval(fgets($handle));
-            while($handle){
+            while(!feof($handle)){
                 if($index > $count_region){
                     break;
                 }
@@ -46,7 +46,7 @@
                         </td>
                     </tr>";
                     $index += 1;
-            }
+            };
             fclose($handle);
         ?>
     </table>
