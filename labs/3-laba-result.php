@@ -36,7 +36,7 @@
             $count_free = intval(fgets($file));
             $nedobor = "-";
             $count_contr = intval(fgets($file));
-            $correct_contr = $count_contr == 0 ? "-":$count_contr;
+            $correct_contr = $count_contr <= 0 ? "-":$count_contr;
             $name_university = fgets($file);
 
             echo "<tr>
