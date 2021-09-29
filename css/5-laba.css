@@ -1,0 +1,32 @@
+.container{
+    width: 50%;
+    height: 600px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.wraper {
+    display: flex;
+    width: 100%;
+    margin-left: 125px;
+}
+
+.item {
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+.cycle{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100px;
+}
+
+.cycle h3 {
+    text-align: left;
+}
