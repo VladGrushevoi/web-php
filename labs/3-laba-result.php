@@ -7,67 +7,80 @@
 </head>
 
 <body>
-    <table>
-    <tr>
-        <th>N</th>
-        <th>Середній бал поступивших на бюджет</th>
-        <th>Кількість поступивших на бюджет</th>
-        <th>Недобір</th>
-        <th>Кількість контрактників</th>
-        <th>ВНЗ</th>
-    </tr>
     <?php
     $choose = $_POST["course"];
     echo $choose . "<a href='3-laba.php'> Назад до вибору</a>";
-    //$correct_choose = strtolower(str_replace(" ", '', $choose));
+    $correct_choose = strtolower(str_replace(" ", '', $choose));
 
     $file = fopen("../data/data.txt", "r");
+    $data = [];
 
     while (!feof($file)) {
         $curr_line = strtolower(str_replace(" ", '', fgets($file)));
-        // if ($curr_line == $correct_choose) {
-        echo $curr_line == $correct_choose;
-        if(fgets($file) == $choose){
+        if ($curr_line == $correct_choose) {
             echo $curr_line == $correct_choose . " ALO ";
             $count_record = intval(fgets($file));
             $index = 1;
-            while(!feof($file)){
-            if($count_record == $index){
-                break;
-            }
-            $avg_ball = doubleval(fgets($file));
-            $count_free = intval(fgets($file));
-            $nedobor = "-";
-            $count_contr = intval(fgets($file));
-            $correct_contr = $count_contr <= 0 ? "-":$count_contr;
-            $name_university = fgets($file);
+            while (!feof($file)) {
+                if ($count_record == $index) {
+                    break;
+                }
+                $avg_ball = doubleval(fgets($file));
+                $count_free = intval(fgets($file));
+                $nedobor = "-";
+                $count_contr = intval(fgets($file));
+                $correct_contr = $count_contr <= 0 ? "-" : $count_contr;
+                $name_university = fgets($file);
 
-            echo "<tr>
-                <td>
-                    $index
-                </td>
-                <td>
-                $avg_ball
-                </td>
-                <td>
-                    $count_free
-                </td>
-                <td>
-                    $nedobor
-                </td>
-                <td>
-                    $correct_contr
-                </td>
-                <td>
-                    $name_university
-                </td>
-                </tr>";
-
+                $object = array(
+                    'index' => $index,
+                    'count_free' => $count_free,
+                    'avg_ball' => $avg_ball,
+                    'nedobor' => $nedobor,
+                    'correct_contr' => $correct_contr,
+                    'name_university' => $name_university
+                );
+                array_push($data, $object);
                 $index++;
             }
         }
     }
+    $_POST['data'] = $data;
     ?>
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Середній бал поступивших на бюджет</th>
+            <th>Кількість поступивших на бюджет</th>
+            <th>Недобір</th>
+            <th>Кількість контрактників</th>
+            <th>ВНЗ</th>
+        </tr>
+        <?php
+        foreach ($_POST['data'] as $value) {
+            
+            echo "<tr>
+                <td>
+                   ". $value['index'] ."
+                </td>
+                <td>
+                ". $value['count_free'] ."
+                </td>
+                <td>
+                ". $value['avg_ball'] ."
+                </td>
+                <td>
+                ". $value['nedobor'] ."
+                </td>
+                <td>
+                ". $value['correct_contr'] ."
+                </td>
+                <td>
+                ". $value['name_university'] ."
+                </td>
+                </tr>";
+        }
+        ?>
     </table>
 </body>
 
