@@ -26,7 +26,7 @@
     while (!feof($file)) {
         $curr_line = strtolower(str_replace(" ", '', fgets($file)));
         // if ($curr_line == $correct_choose) {
-        echo fgets($file);
+        echo $curr_line == $correct_choose;
         if(fgets($file) == $choose){
             $count_record = intval(fgets($file));
             $index = 1;
