@@ -28,6 +28,7 @@
         // if ($curr_line == $correct_choose) {
         echo $curr_line == $correct_choose;
         if(fgets($file) == $choose){
+            echo $curr_line == $correct_choose . " ALO ";
             $count_record = intval(fgets($file));
             $index = 1;
             while(!feof($file)){
