@@ -17,8 +17,8 @@
 
     while (!feof($file)) {
         $curr_line = strtolower(str_replace(" ", '', fgets($file)));
-        echo $curr_line . " ";
-        if ($curr_line == $correct_choose) {
+        // echo $curr_line . " ";
+        if (strcmp($curr_line, $correct_choose)) {
             echo $curr_line == $correct_choose . " ALO ";
             $count_record = intval(fgets($file));
             $index = 1;
