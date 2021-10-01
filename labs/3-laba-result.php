@@ -44,6 +44,7 @@
             }
         }
     }
+    fclose($file);
     $_POST['data'] = $data;
     ?>
     <table>
