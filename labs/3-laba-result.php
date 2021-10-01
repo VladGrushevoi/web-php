@@ -10,13 +10,14 @@
     <?php
     $choose = $_POST["course"];
     echo $choose . "<a href='3-laba.php'> Назад до вибору</a>";
-    $correct_choose = strtolower(str_replace(" ", '', $choose));
-
+    // $correct_choose = strtolower(str_replace(" ", '', $choose));
+    $correct_choose = strtolower($choose);
     $file = fopen("../data/data.txt", "r");
     $data = [];
 
     while (!feof($file)) {
-        $curr_line = strtolower(str_replace(" ", '', fgets($file)));
+        // $curr_line = strtolower(str_replace(" ", '', fgets($file)));
+        $curr_line = strtolower(fgets($file));
         if (strcmp($curr_line, $correct_choose) == 0) {
             $count_record = intval(fgets($file));
             $index = 1;
