@@ -18,10 +18,7 @@
     while (!feof($file)) {
         // $curr_line = strtolower(str_replace(" ", '', fgets($file)));
         $curr_line = strtolower(fgets($file));
-        if(1 == 1){
-            phpinfo();
-        }
-        if (strcmp($curr_line, $correct_choose) == 0) {
+        if (strcmp($curr_line, $correct_choose) != 0) {
             $count_record = intval(fgets($file));
             $index = 1;
             while (!feof($file)) {
