@@ -65,10 +65,10 @@
                    ". $value['index'] ."
                 </td>
                 <td>
-                ". $value['count_free'] ."
+                ". $value['avg_ball'] ."
                 </td>
                 <td>
-                ". $value['avg_ball'] ."
+                ". $value['count_free'] ."
                 </td>
                 <td>
                 ". $value['nedobor'] ."
