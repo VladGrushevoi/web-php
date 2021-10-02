@@ -19,15 +19,6 @@
     $temperature = $xpath->query("/html/body/section/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div/div[3]/div/div/div/*/span[1]");
     $times = $xpath->query("/html/body/section/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/div/div[1]/*/div/span");
     $city_name = $xpath->query("//a[contains(@class, 'js-crumb')]");
-    // echo "місто ".$city_name[2]->nodeValue."<br>";
-    // echo date("d.m.y") . "<br>";
-    // foreach ($sun_cycle as $element) {
-    //     echo $element->nodeValue;
-    // }
-    // echo "<br>";
-    // foreach ($times as $index => $t) {
-    //     echo $t->nodeValue . " --" . $temperature[$index]->nodeValue . " <br>";
-    // }
     ?>
     <div class="container">
         <h2><?php echo $city_name[2]->nodeValue?></h2>
