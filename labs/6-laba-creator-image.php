@@ -61,7 +61,7 @@ for($i = 0; $i < count($times); $i++ ){
     imagestring($im,4, (50*($i + 1)) - 7, 130,$time,$blue);
 }
 $name_city = $city_name[count($city_name) - 1]->nodeValue;
-imagestring($im, 20, 120, 170, "$name_city ". date("d.m.y") , $blue);
+imagestring($im, 20, 120, 170, $name_city . date("d.m.y") , $blue);
 
 imagepng($im);
 imagedestroy($im);
