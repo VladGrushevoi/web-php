@@ -16,13 +16,13 @@
     width: 80%;
 }
 
-#container{
+.container{
     width: 50%;
     display: flex;
     border: solid #aa7744;
 }
 
-#child {
+.child {
     border: solid #05fad9;
     border-radius: 5px;
     box-shadow: 10 5 5 #00d4f1;
