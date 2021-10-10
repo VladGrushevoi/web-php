@@ -1,10 +1,7 @@
 <?php
     $ip = $_POST["ip"];
-    $loc = file_get_contents("https://ipapi.co/$ip/json/");
+    $loc = file_get_contents("http://ip-api.com/json/$ip");
     $json = json_decode($loc, true);
-    $s = "";
-    foreach($json as $key => $value){
-        $s.= $key . "--". $value ."\n";
-    }
-    echo $s;
+    
+    echo $json['country'];
 ?>
