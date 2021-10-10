@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $.get("8-laba-result-xml.php", function(data, status){
+        console.log(data)
         $("#result-xml").text(data + " " + status);
     })
     $( "#form" ).submit(function( event ) {
