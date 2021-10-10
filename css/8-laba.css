@@ -1,0 +1,30 @@
+.form {
+    border: solid #537e2f;
+    border-radius: 5px;
+    box-shadow: 10px 50px 5px #4d4b4b;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form * {
+    margin: 15px;
+}
+
+.form input {
+    width: 80%;
+}
+
+#container{
+    width: 50%;
+    display: flex;
+    border: solid #aa7744;
+}
+
+#child {
+    border: solid #05fad9;
+    border-radius: 5px;
+    box-shadow: 10 5 5 #00d4f1;
+    width: 50%;
+}

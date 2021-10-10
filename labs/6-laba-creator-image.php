@@ -23,7 +23,7 @@ $blue = imagecolorallocate($im, 0, 0, 255);
 $red = imagecolorallocate($im, 255, 0, 0);
 $white = imagecolorallocate($im, 255, 255, 255);
 
-$font = "../Shrift/caviar-dreams";
+// $font = "../Shrift/caviar-dreams";
 $left_image_src = imagecreatefrompng("../images/left.png");
 $center_image_src = imagecreatefrompng("../images/center.png");
 $right_image_src = imagecreatefrompng("../images/right.png");
