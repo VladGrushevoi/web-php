@@ -5,7 +5,7 @@
     $json = json_decode($loc, true);
 
     $html = "";
-    $html .= "<p>Flag: <img src='../flags_ISO_3166-1/".$json['countryCode']."' alt='../flags_ISO_3166-1/_unitednations'></p>";
+    $html .= "<p>Flag: <img src='../flags_ISO_3166-1/".$json['countryCode'].".png' alt='../flags_ISO_3166-1/_unitednations.png'></p>";
     foreach($json as $key => $value){
         $html .= "<p>". $key . ": ". $value ."</p>";
     }
