@@ -48,6 +48,7 @@
     fclose($file);
     $_POST['data'] = $data;
     ?>
+
     <table>
         <tr>
             <th>N</th>
