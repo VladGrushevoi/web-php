@@ -15,9 +15,11 @@
     </form>
     <div class="container">
         <div class="child">
+            <p>Результат з формата XML</p>
             <p id="result-xml"></p>
         </div>
         <div class="child">
+            <p>Результат з формата JSON</p>
             <div id="result-json"></div>
         </div>
     </div>
