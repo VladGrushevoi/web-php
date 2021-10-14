@@ -18,7 +18,7 @@
             <p id="result-xml"></p>
         </div>
         <div class="child">
-            <p id="result-json"></p>
+            <div id="result-json"></div>
         </div>
     </div>
     
