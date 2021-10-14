@@ -22,9 +22,3 @@
             <p>Результат з формата JSON</p>
             <div id="result-json"></div>
         </div>
-    </div>
-    
-    <script src="../js/8-laba.js"></script>
-</body>
-
-</html>
