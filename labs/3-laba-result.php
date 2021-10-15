@@ -18,6 +18,7 @@
     while (!feof($file)) {
             $name_napr = strtolower(fgets($file));
             if($name_napr == $correct_choose){
+                echo "<h1>ALOBLYAT</h1>";
                 $count_napr = intval(fgets($file));
                 $index = 1;
                 while($count_napr != $index){
