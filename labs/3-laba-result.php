@@ -16,35 +16,60 @@
     $data = [];
 
     while (!feof($file)) {
-        // $curr_line = strtolower(str_replace(" ", '', fgets($file)));
-        $curr_line = strtolower(fgets($file));
-        if (strcmp($curr_line, $correct_choose) == 0) {
-            $count_record = intval(fgets($file));
-            $index = 1;
-            while (!feof($file)) {
-                if ($count_record == $index) {
-                    break;
-                }
-                $avg_ball = doubleval(fgets($file));
-                $count_free = intval(fgets($file));
-                $nedobor = "-";
-                $count_contr = intval(fgets($file));
-                $correct_contr = $count_contr <= 0 ? "-" : $count_contr;
-                $name_university = fgets($file);
+            $name_napr = strtolower(fgets($file));
+            if($name_napr == $correct_choose){
+                $count_napr = intval(fgets($file));
+                $index = 1;
+                while($count_napr != $index){
+                    $avg_ball = doubleval(fgets($file));
+                    $count_free = intval(fgets($file));
+                    $nedobor = "-";
+                    $count_contr = intval(fgets($file));
+                    $correct_contr = $count_contr <= 0 ? "-" : $count_contr;
+                    $name_university = fgets($file);
 
-                $object = array(
-                    'index' => $index,
-                    'count_free' => $count_free,
-                    'avg_ball' => $avg_ball,
-                    'nedobor' => $nedobor,
-                    'correct_contr' => $correct_contr,
-                    'name_university' => $name_university
-                );
-                array_push($data, $object);
-                $index++;
+                    $object = array(
+                        'index' => $index,
+                        'count_free' => $count_free,
+                        'avg_ball' => $avg_ball,
+                        'nedobor' => $nedobor,
+                        'correct_contr' => $correct_contr,
+                        'name_university' => $name_university
+                    );
+                    array_push($data, $object);
+                    $index++;
+                }
             }
         }
-    }
+
+
+        // if (strcmp($curr_line, $correct_choose) == 0) {
+        //     $count_record = intval(fgets($file));
+        //     $index = 1;
+        //     while (!feof($file)) {
+        //         if ($count_record == $index) {
+        //             break;
+        //         }
+        //         $avg_ball = doubleval(fgets($file));
+        //         $count_free = intval(fgets($file));
+        //         $nedobor = "-";
+        //         $count_contr = intval(fgets($file));
+        //         $correct_contr = $count_contr <= 0 ? "-" : $count_contr;
+        //         $name_university = fgets($file);
+
+        //         $object = array(
+        //             'index' => $index,
+        //             'count_free' => $count_free,
+        //             'avg_ball' => $avg_ball,
+        //             'nedobor' => $nedobor,
+        //             'correct_contr' => $correct_contr,
+        //             'name_university' => $name_university
+        //         );
+        //         array_push($data, $object);
+        //         $index++;
+        //     }
+        // }
+    
     fclose($file);
     $_POST['data'] = $data;
     ?>
