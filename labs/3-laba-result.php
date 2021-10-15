@@ -12,13 +12,12 @@
     echo $choose . "<a href='3-laba.php'> Назад до вибору</a>";
     // $correct_choose = strtolower(str_replace(" ", '', $choose));
     $correct_choose = strtolower($choose);
-    $file = fopen("../data/data.txt", "r");
+    $file = fopen("../data/data.txt", "rb");
     $data = [];
 
     while (!feof($file)) {
             $name_napr = strtolower(fgets($file));
-            if($name_napr == $correct_choose){
-                echo "<h1>ALOBLYAT</h1>";
+            if(strcmp($name_napr, $correct_choose) == 0){
                 $count_napr = intval(fgets($file));
                 $index = 1;
                 while($count_napr != $index){
